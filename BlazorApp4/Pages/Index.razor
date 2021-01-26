@@ -1,0 +1,15 @@
+﻿@page "/"
+@using BlazorApp4.Data
+@inject NavigationManager navigationManager
+@inject IJSRuntime jSRuntime
+
+<button class="btn-success" @onclick="Open">Open Link</button>
+ 
+@code {
+
+    private async Task Open()
+    {
+        await navigationManager.NavigationToNewWindow(jSRuntime, "https://youtu.be/GAOCe-2nXqc", "Redirecting Now");
+    }
+
+}
